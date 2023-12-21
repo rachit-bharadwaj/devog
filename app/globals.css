@@ -70,8 +70,43 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .bg-gradient-dark {
+    background: rgb(0, 0, 0);
+    background: -moz-linear-gradient(
+      320deg,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(194, 62, 255, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      320deg,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(194, 62, 255, 1) 100%
+    );
+    background: linear-gradient(
+      320deg,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(194, 62, 255, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#c23eff",GradientType=1);
+  }
+
+  .bg-gradient-welcome-dark {
+    background-color: hsla(0, 1%, 7%, 1);
+    background-image: radial-gradient(
+        at 80% 100%,
+        hsla(240, 94%, 16%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 0% 0%, hsla(266, 96%, 12%, 1) 0px, transparent 50%);
+  }
+
+  .text-gradient {
+    background: -moz-linear-gradient(320deg, #f1069b, #0839cc);
+    background: -webkit-linear-gradient(320deg, #f1069b, #0839cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
