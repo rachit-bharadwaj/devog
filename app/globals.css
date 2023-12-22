@@ -72,23 +72,23 @@
   }
 
   .bg-gradient-dark {
-    background: rgb(0, 0, 0);
+    background: rgb(16, 15, 15);
     background: -moz-linear-gradient(
-      320deg,
-      rgba(0, 0, 0, 1) 50%,
-      rgba(194, 62, 255, 1) 100%
+      150deg,
+      rgba(16, 15, 15, 1) 40%,
+      rgba(52, 0, 111, 1) 100%
     );
     background: -webkit-linear-gradient(
-      320deg,
-      rgba(0, 0, 0, 1) 50%,
-      rgba(194, 62, 255, 1) 100%
+      150deg,
+      rgba(16, 15, 15, 1) 40%,
+      rgba(52, 0, 111, 1) 100%
     );
     background: linear-gradient(
-      320deg,
-      rgba(0, 0, 0, 1) 50%,
-      rgba(194, 62, 255, 1) 100%
+      150deg,
+      rgba(16, 15, 15, 1) 40%,
+      rgba(52, 0, 111, 1) 100%
     );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#c23eff",GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#100f0f",endColorstr="#34006f",GradientType=1);
   }
 
   .bg-gradient-welcome-dark {

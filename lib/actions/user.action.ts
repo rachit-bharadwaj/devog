@@ -23,3 +23,14 @@ export const updateProfilePicture = async (profilePicture: string) => {
   user.profilePicture = profilePicture;
   await user.save();
 };
+
+export const checkUserName = async (userName: string) => {
+  await connectDB();
+
+  const user = await User.findOne({ userName });
+  if (user) {
+    return true;
+  } else {
+    return false;
+  }
+};

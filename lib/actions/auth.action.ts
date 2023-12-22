@@ -11,6 +11,7 @@ export const logout = async () => {
 
 export const getCookieData = async () => {
   const token = cookies().get("token")?.value || "";
+  if (!token) return null;
   const tokenData: any = jwt.verify(token, process.env.JWT_SECRET!);
   return tokenData.id;
 };
