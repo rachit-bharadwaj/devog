@@ -4,7 +4,7 @@ import { RegisterForm } from "@/components/auth";
 
 const RegisterPage = () => {
   return (
-    <div className="flex flex-col p-5 items-center justify-center text-center gap-5">
+    <div className="flex flex-col p-5 items-center justify-center text-center gap-5 h-screen">
       <Link href="/" className="text-3xl font-bold uppercase">
         Dev.og
       </Link>

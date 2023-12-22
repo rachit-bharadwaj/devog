@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 
 import { useTheme } from "next-themes";
 
+// components
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Navbar } from ".";
 
 // icons
 import { HiMenu } from "react-icons/hi";
@@ -30,7 +32,9 @@ const Header = () => {
         <SheetTrigger>
           <HiMenu className="text-2xl" />
         </SheetTrigger>
-        <SheetContent>nsjvkjjenjnwk</SheetContent>
+        <SheetContent>
+          <Navbar />
+        </SheetContent>
       </Sheet>
 
       {/* logo */}
