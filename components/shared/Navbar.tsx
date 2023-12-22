@@ -1,9 +1,12 @@
 "use client";
 
-import { getUserData, updateProfilePicture } from "@/lib/actions/user.action";
-import { UserData } from "@/types";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+
+import Image from "next/image";
+
+import { getUserData, updateProfilePicture } from "@/lib/actions/user.action";
+
+import { UserData } from "@/types";
 
 // icons
 import { TiUser } from "react-icons/ti";
