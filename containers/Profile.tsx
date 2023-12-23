@@ -10,9 +10,11 @@ import { checkUserName } from "@/lib/actions/user.action";
 const Profile = ({
   children,
   profile,
+  className,
 }: {
   children: ReactNode;
   profile: string;
+  className?: string;
 }) => {
   const [validProfile, setValidProfile] = useState(true);
 
@@ -38,7 +40,7 @@ const Profile = ({
         </p>
       </div>
     );
-  } else return <div>{children}</div>;
+  } else return <div className={className}>{children}</div>;
 };
 
 export default Profile;

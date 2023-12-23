@@ -6,6 +6,8 @@ export type UserData = {
   userName?: string;
   email?: string;
   profilePicture?: string;
+  blogs?: string[];
+  bio?: string;
 };
 
 export type MenuItem = {

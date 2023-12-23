@@ -63,7 +63,11 @@ const Navbar = () => {
       {/* ------------menu------- */}
       <div className="flex flex-col gap-3">
         <MenuItem name="My Feed" path="/" Icon={MdArticle} />
-        <MenuItem name="Profile" path="/profile" Icon={TiUser} />
+        <MenuItem
+          name="Profile"
+          path={`/${userDetails.userName}`}
+          Icon={TiUser}
+        />
         <MenuItem
           name="Account Details"
           path="/account"

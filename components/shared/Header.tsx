@@ -44,7 +44,7 @@ const Header = () => {
   }
 
   return (
-    <header className="p-5">
+    <header id="root-header" className="p-5 sticky top-3 z-50 flex bg-blur shadow m-3 rounded">
       {/* ------------search box------ */}
       {searchbox && (
         <div className="flex items-center gap-2 w-full ring ring-dark-form rounded-xl py-2 px-5 focus-within:ring-gray-light/50">

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className="dark:bg-gradient-dark h-screen">
+      <body className="dark:bg-gradient-dark min-h-screen overflow-auto">
         <Header />
         {children}
       </body>
