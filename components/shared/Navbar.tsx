@@ -39,7 +39,7 @@ const Navbar = () => {
       {/* ----------- upper section ---------- */}
       <div className="flex flex-col gap-3">
         {userDetails.profilePicture ? (
-          <Link href="/profile">
+          <Link href={`/${userDetails.userName}`}>
             <Image
               src={userDetails.profilePicture}
               alt="profile picture"

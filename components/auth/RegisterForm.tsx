@@ -87,10 +87,10 @@ const RegisterForm = () => {
     // register user
     try {
       const res = await axios.post("/api/auth/register", {
-        name,
-        userName,
-        email,
-        password,
+        name: name,
+        userName: userName,
+        email: email,
+        password: password,
       });
 
       const data = await res.data;

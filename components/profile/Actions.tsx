@@ -24,11 +24,11 @@ const Actions = ({ userName }: UserData) => {
       <section className="my-10 flex gap-5">
         <Link
           href={`${userName}/edit`}
-          className="bg-gray-700 px-10 py-3 rounded-xl flex-1"
+          className="bg-gray-700 px-10 py-3 rounded-xl flex-1 text-center"
         >
           Edit Profile
         </Link>
-        <button className="bg-gray-700 px-10 py-3 rounded-xl flex-1">
+        <button className="bg-gray-700 px-10 py-3 rounded-xl flex-1 text-center">
           Share Profile
         </button>
       </section>

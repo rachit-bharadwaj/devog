@@ -29,6 +29,7 @@ const Header = ({ userName }: UserData) => {
     userName: "",
     profilePicture: "",
     blogs: [],
+    bio: "",
   });
 
   const getUserDetails = async () => {
@@ -44,15 +45,13 @@ const Header = ({ userName }: UserData) => {
     <section>
       <div className="flex items-center justify-between">
         {userDetails?.profilePicture ? (
-          <Link href="/profile">
-            <Image
-              src={userDetails?.profilePicture}
-              alt="profile picture"
-              width={500}
-              height={500}
-              className="rounded-full w-20 h-20"
-            />
-          </Link>
+          <Image
+            src={userDetails?.profilePicture}
+            alt="profile picture"
+            width={500}
+            height={500}
+            className="rounded-full w-20 h-20"
+          />
         ) : (
           <div className="bg-gray-700 p-5 rounded-full w-fit">
             <TiUser className="text-7xl" />
@@ -71,10 +70,7 @@ const Header = ({ userName }: UserData) => {
       <div>
         <p className="text-2xl font-bold">{userDetails?.name}</p>
         <p className="text-gray-400">@{userDetails?.userName}</p>
-        <p className="text-sm max-w-xs">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-          delectus quod saepe sapiente
-        </p>
+        <p className="text-sm max-w-xs mt-3">{userDetails?.bio}</p>
       </div>
     </section>
   );

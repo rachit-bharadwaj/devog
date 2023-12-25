@@ -60,3 +60,15 @@ export const authourizedUser = async (profile: string | undefined) => {
   if (user.userName === profile) return true;
   else return false;
 };
+
+export const updateProfile = async ({ name, userName, bio }: UserData) => {
+  await connectDB();
+
+  const user = await User.findById(userID);
+
+  user.name = name;
+  user.userName = userName;
+  user.bio = bio;
+
+  await user.save();
+};
