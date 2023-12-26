@@ -53,7 +53,7 @@ module.exports = {
 
         dark: "#0e1217",
         "dark-form": "#1a1d27",
-        "gray-light": "#a0abc6"
+        "gray-light": "#a0abc6",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -91,5 +91,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ],
 };

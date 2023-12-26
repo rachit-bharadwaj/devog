@@ -1,8 +1,14 @@
-import { TextEditor } from "@/components/blog";
+import { Banner, Description, Header, TextEditor } from "@/components/blog";
 
 const CreateBlogPage = () => {
   return (
-    <div>
+    <div className="p-5">
+      <Header />
+
+      <Description />
+
+      <Banner />
+
       <TextEditor />
     </div>
   );

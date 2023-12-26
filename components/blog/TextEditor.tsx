@@ -1,33 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { useContext, useState } from "react";
 
-import EditorJS from "@editorjs/editorjs";
+// constants
+import { formats, modules } from "@/constants";
 
-import { editorTools } from "@/constants";
+//  react quill
+import "react-quill/dist/quill.snow.css";
+import { BlogContext } from "@/contexts/blog";
+
+const DynamicReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const TextEditor = () => {
-  const [editorMounted, setEditorMounted] = useState(false);
+  const [value, setValue] = useState<string>("");
 
-  useEffect(() => {
-    const initializeEditor = async () => {
-      if (editorMounted) return;
-      const editor = new EditorJS({
-        holder: "textEditor",
-        placeholder: "Let`s write an awesome story!",
-        tools: editorTools,
-      });
+  const { blogData, setBlogData } = useContext(BlogContext);
 
-      setEditorMounted(true);
-    };
-
-    initializeEditor();
-  }, [editorMounted]);
+  const handleChange = (event: any) => {
+    setValue(event);
+    setBlogData({ ...blogData, content: event });
+  };
 
   return (
-    <section>
-      <div id="textEditor" className="border m-5 rounded p-3 cursor-text" />
-    </section>
+    <div className="bg-blur bg-gray-900">
+      <DynamicReactQuill
+        theme="snow"
+        formats={formats}
+        modules={modules}
+        value={value}
+        onChange={handleChange}
+        placeholder="Start your blog here..."
+      />
+    </div>
   );
 };
 

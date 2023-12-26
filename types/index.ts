@@ -15,3 +15,14 @@ export type MenuItem = {
   path: string;
   Icon: ElementType;
 };
+
+export type BlogData = {
+  _id?: string;
+  title?: string;
+  bannerImage?: string;
+  description?: string;
+  content?: string;
+  author?: string;
+  createdAt?: string;
+  updatedAt?: string;
+};

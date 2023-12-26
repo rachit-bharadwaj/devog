@@ -108,6 +108,19 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .ql-editor {
+    min-height: 10rem;
+    margin: 0;
+  }
+
+  .ql-snow {
+    border: none;
+  }
+
+  .ql-toolbar {
+    color: #f1069b;
+  }
 }
 
 /* --------------custom styling------------ */

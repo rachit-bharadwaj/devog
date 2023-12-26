@@ -50,7 +50,7 @@ const LoginForm = () => {
       return toast.error("Please enter a valid email");
     }
 
-    // register user
+    // login user
     try {
       const res = await axios.post("/api/auth/login", { email, password });
 

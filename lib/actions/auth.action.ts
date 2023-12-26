@@ -1,8 +1,9 @@
 "use server";
 
-import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+
+import jwt from "jsonwebtoken";
 
 export const logout = async () => {
   cookies().delete("token");

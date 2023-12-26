@@ -5,7 +5,7 @@ import { Roboto } from "next/font/google";
 
 import "./globals.css";
 
-import { Theme } from "@/containers";
+import { BlogContextProvider, Theme } from "@/containers";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -22,9 +22,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={roboto.variable} suppressHydrationWarning={true}>
+    <html lang="en" className={roboto.variable} suppressHydrationWarning>
       <body>
-        <Theme>{children}</Theme>
+        <BlogContextProvider>
+          <Theme>{children}</Theme>
+        </BlogContextProvider>
       </body>
     </html>
   );

@@ -31,10 +31,6 @@ export const POST = async (request: NextRequest) => {
     //   create token data
     const tokenData = {
       id: user._id,
-      name: user.name,
-      email: user.email,
-      userName: user.userName,
-      profilePicture: user.profilePicture,
     };
 
     const firstName = user.name.split(" ")[0];

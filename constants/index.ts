@@ -1,60 +1,67 @@
-import Embed from "@editorjs/embed";
-import List from "@editorjs/list";
-import Image from "@editorjs/image";
-import Header from "@editorjs/header";
-import Quote from "@editorjs/quote";
-import Marker from "@editorjs/marker";
-import InlineCode from "@editorjs/inline-code";
+import { BlogContextInterface } from "@/interfaces";
+import { BlogData } from "@/types";
 
-// utility functions
-// import { uploadImageByFile, uploadImageByURL } from "@/lib/functions";
-
-const uploadImageByURL = async (e: any) => {
-    let link = new Promise((resolve, reject) => {
-      try {
-        resolve(e);
-      } catch (error: any) {
-        reject(error);
-      }
-    });
-  
-    return link.then((url) => {
-      return {
-        success: 1,
-        file: {
-          url: url,
-        },
-      };
-    });
-  };
-
-export const editorTools = {
-  embed: Embed,
-  list: {
-    class: List,
-    inlineToolbar: true,
+export const modules = {
+  toolbar: [
+    [{ header: [] }, { font: [] }],
+    [{ size: [] }],
+    [{ align: [] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["link", "image", "video"],
+  ],
+  clipboard: {
+    matchVisual: false,
   },
-  image: {
-    class: Image,
-    config: {
-      uploader: {
-        uploadByUrl: uploadImageByURL,
-        // uploadFile: uploadImageByFile,
-      },
-    },
-  },
-  header: {
-    class: Header,
-    config: {
-      placeholder: "Enter a Heading",
-      levels: [2, 3],
-      defaultLevel: 2,
-    },
-  },
-  quote: {
-    class: Quote,
-    inlineToolbar: true,
-  },
-  marker: Marker,
-  inlineCode: InlineCode,
 };
+
+export const formats = [
+  "header",
+  "font",
+  "size",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "indent",
+  "link",
+  "image",
+  "video",
+];
+
+export const blogModules = {
+  toolbar: false,
+};
+
+export const blogDefaultValues = {
+  _id: "",
+  title: "",
+  bannerImage: "",
+  description: "",
+  content: "",
+  author: "",
+  createdAt: "",
+  updatedAt: "",
+};
+
+export const blogContextDefaultState = {
+  blogData: {
+    _id: "",
+    title: "",
+    bannerImage: "",
+    description: "",
+    content: "",
+    author: "",
+    createdAt: "",
+    updatedAt: "",
+  },
+  setBlogData: (blogData: BlogData) => {},
+} as BlogContextInterface;

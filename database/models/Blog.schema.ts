@@ -8,10 +8,25 @@ const BlogSchema = new Schema(
       trim: true,
     },
 
-    content: {
+    description: {
       type: String,
       required: true,
       trim: true,
+    },
+
+    bannerImage: {
+      type: String,
+      required: true,
+    },
+
+    content: {
+      type: String,
+      required: true,
+    },
+
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   },
 
