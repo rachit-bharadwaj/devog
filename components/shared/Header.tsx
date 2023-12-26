@@ -98,7 +98,7 @@ const Header = () => {
 
             {/* create post button */}
             {isLoggedIn && (
-              <Link href="blogs/create">
+              <Link href="/blogs/create">
                 <PiNotePencilBold className="text-2xl text-gray-400" />
               </Link>
             )}

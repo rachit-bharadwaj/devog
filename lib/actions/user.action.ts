@@ -25,6 +25,14 @@ export const getUserDataFromUserName = async (userName: string | undefined) => {
   return userData;
 };
 
+export const getUserDataFromID = async (id: string | undefined) => {
+  await connectDB();
+
+  const userData = await User.findById(id);
+
+  return userData;
+};
+
 export const updateProfilePicture = async (profilePicture: string) => {
   await connectDB();
   const user = await User.findById(userID);

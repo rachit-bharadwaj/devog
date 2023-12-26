@@ -1,4 +1,4 @@
-import { Banner, Description, Header, TextEditor } from "@/components/blog";
+import { Banner, Description, Header, TextEditor } from "@/components/blog/create";
 
 const CreateBlogPage = () => {
   return (

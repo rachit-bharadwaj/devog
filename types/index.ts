@@ -26,3 +26,18 @@ export type BlogData = {
   createdAt?: string;
   updatedAt?: string;
 };
+
+export type BlogDataWithAuthor = {
+  _id?: string;
+  title?: string;
+  bannerImage?: string;
+  description?: string;
+  content?: string;
+  author?: {
+    name?: string;
+    userName?: string;
+    profilePicture?: string;
+  };
+  createdAt?: string;
+  updatedAt?: string;
+};

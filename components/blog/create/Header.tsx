@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { BlogContext } from "@/contexts/blog";
 
@@ -47,7 +47,9 @@ const Header = () => {
   };
 
   const discardChanges = () => {
-    window.location.reload();
+    // window.location.reload();
+
+    console.log(blogData);
   };
 
   const handlePublish = async () => {
