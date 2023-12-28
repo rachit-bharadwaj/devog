@@ -1,5 +1,5 @@
-import { BlogContextInterface, BlogDataContextInterface } from "@/interfaces";
-import { BlogData, BlogDataWithAuthor } from "@/types";
+import { BlogContextInterface } from "@/interfaces";
+import { BlogData } from "@/types";
 
 export const modules = {
   toolbar: [
@@ -65,38 +65,3 @@ export const blogContextDefaultState = {
   },
   setBlogData: (blogData: BlogData) => {},
 } as BlogContextInterface;
-
-export const blogDataContextDefaultState = {
-  blogDataWithAuthor: {
-    _id: "",
-    title: "",
-    bannerImage: "",
-    description: "",
-    content: "",
-    author: {
-      name: "",
-      userName: "",
-      profilePicture: "",
-    },
-    createdAt: "",
-    updatedAt: "",
-  },
-
-  setBlogDataWithAuthor: (blogDataWithAuthor: BlogDataWithAuthor) => {},
-} as BlogDataContextInterface;
-
-
-export const blogDataDefaultValues = {
-  _id: "",
-    title: "",
-    bannerImage: "",
-    description: "",
-    content: "",
-    author: {
-      name: "",
-      userName: "",
-      profilePicture: "",
-    },
-    createdAt: "",
-    updatedAt: "",
-};

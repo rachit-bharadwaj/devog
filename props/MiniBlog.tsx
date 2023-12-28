@@ -30,7 +30,7 @@ const MiniBlog = ({
   return (
     <Link
       href={`/blogs/${_id}`}
-      className="shadow rounded-xl bg-[#1c1f26] bg-blur p-5 flex flex-col gap-5"
+      className="shadow rounded-xl w-80 bg-[#1c1f26] bg-blur p-5 flex flex-col gap-5"
     >
       <div>
         <p className="text-2xl font-extrabold">{title}</p>

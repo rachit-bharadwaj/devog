@@ -4,6 +4,13 @@ import { ReactNode, useCallback, useEffect, useState } from "react";
 import { BlogData, UserData } from "@/types";
 import { fetchBlog } from "@/lib/actions/blog.action";
 import { getUserDataFromID } from "@/lib/actions/user.action";
+import {
+  Banner,
+  Content,
+  Description,
+  MetaData,
+  Title,
+} from "@/components/blog/read";
 
 const BlogPage = ({
   className,
@@ -11,7 +18,7 @@ const BlogPage = ({
   blogID,
 }: {
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
   blogID: string;
 }) => {
   const [blogData, setBlogData] = useState<BlogData>({
@@ -47,9 +54,28 @@ const BlogPage = ({
 
     getBlogData();
     getAuthorDetails();
-  }, [getBlogData, blogData.author]);
+  }, [getBlogData, blogData.author, authorDetails, blogData]);
 
-  return <div className={className}>{children}</div>;
+  return (
+    <div className={className}>
+      <Banner bannerImage={blogData.bannerImage} />
+
+      <Title title={blogData.title} />
+
+      <Description description={blogData.description} />
+
+      <MetaData
+        author={authorDetails}
+        title={blogData.title}
+        createdAt={blogData.createdAt}
+        updatedAt={blogData.updatedAt}
+      />
+
+      <Content content={blogData.content} />
+
+      {/* {children} */}
+    </div>
+  );
 };
 
 export default BlogPage;

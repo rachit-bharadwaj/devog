@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { getUserData, updateProfilePicture } from "@/lib/actions/user.action";
+import { getUserData } from "@/lib/actions/user.action";
 
 import { UserData } from "@/types";
 
