@@ -17,9 +17,14 @@ const MiniBlogs = () => {
   ]);
 
   const getBlogs = async () => {
-    const blogs: any = await fetchBlogs();
-    setBlogs(blogs);
-    console.log(blogs)
+    try {
+      const res = await fetch("/api/blog");
+      const blogs = await res.json();
+      setBlogs(blogs.blogs);
+      console.log(blogs);
+    } catch (error: any) {
+      console.log(error.message);
+    }
   };
 
   useEffect(() => {
