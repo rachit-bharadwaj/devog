@@ -4,11 +4,16 @@ import connectDB from "@/database/connection/mongoose";
 import Blog from "@/database/models/Blog.schema";
 
 export const fetchBlogs = async () => {
-  await connectDB();
+  try {
+    await connectDB();
 
-  const blogs = await Blog.find({});
+    const blogs = await Blog.find({});
 
-  return blogs;
+    return blogs;
+  } catch (error:any) {
+    console.error("Error fetching blogs:", error.message);
+    throw error;
+  }
 };
 
 export const fetchBlog = async (id: string) => {

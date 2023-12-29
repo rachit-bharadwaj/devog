@@ -19,6 +19,7 @@ const MiniBlogs = () => {
   const getBlogs = async () => {
     const blogs: any = await fetchBlogs();
     setBlogs(blogs);
+    console.log(blogs)
   };
 
   useEffect(() => {
@@ -27,16 +28,18 @@ const MiniBlogs = () => {
 
   return (
     <div className="flex flex-wrap gap-10 p-5 justify-center">
-      {blogs.map((blog: BlogData) => (
-        <MiniBlog
-          key={blog._id}
-          _id={blog._id}
-          title={blog.title}
-          description={blog.description}
-          bannerImage={blog.bannerImage}
-          createdAt={blog.createdAt}
-        />
-      ))}
+      {blogs
+        ? blogs.map((blog: BlogData) => (
+            <MiniBlog
+              key={blog._id}
+              _id={blog._id}
+              title={blog.title}
+              description={blog.description}
+              bannerImage={blog.bannerImage}
+              createdAt={blog.createdAt}
+            />
+          ))
+        : "Loading your feed..."}
     </div>
   );
 };
