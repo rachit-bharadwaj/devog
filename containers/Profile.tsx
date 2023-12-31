@@ -20,6 +20,7 @@ const Profile = ({
 
   const checkProfile = async () => {
     const res = await checkUserName(profile);
+    console.log(profile)
     setValidProfile(res);
   };
 

@@ -34,7 +34,9 @@ const Header = ({ userName }: UserData) => {
 
   const getUserDetails = async () => {
     const userData = await getUserDataFromUserName(userName);
+     console.log(userName)
     setUserDetails(userData);
+
   };
 
   useEffect(() => {
