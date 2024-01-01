@@ -34,7 +34,7 @@ const MiniBlog = ({
     >
       <div>
         <p className="text-2xl font-extrabold">{title}</p>
-        <p className="text-sm text-gray-400">{date}</p>
+        {date && <p className="text-sm text-gray-400">{date}</p>}
       </div>
       {bannerImage && (
         <Image
@@ -45,7 +45,9 @@ const MiniBlog = ({
           className="aspect-[4/1] w-96 rounded-xl"
         />
       )}
-      <p className="text-lg text-gray-300">{description}</p>
+      <p className="text-lg text-gray-300 overflow-hidden line-clamp-3">
+        {description}
+      </p>
     </Link>
   );
 };

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { MiniBlog } from "@/props";
 import { BlogData } from "@/types";
-import { fetchBlogs } from "@/lib/actions/blog.action";
 
 const MiniBlogs = () => {
   const [blogs, setBlogs] = useState<BlogData[]>([
